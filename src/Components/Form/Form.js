@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 export default class Form extends Component {
   constructor(props) {
@@ -20,8 +21,7 @@ export default class Form extends Component {
 
   handleClickAdd = () => {
 
-    // Makes sure each input is filled out before submitting
-
+    let newProduct = this.state
     let { image_url, product_name, price } = this.state
 
     if (image_url === '') {
@@ -32,6 +32,7 @@ export default class Form extends Component {
       alert('Price is required')
     } else {
       alert('You added a product')
+      this.addProduct(newProduct)
     }
   }
 
@@ -44,7 +45,15 @@ export default class Form extends Component {
     document.getElementById('addForm').reset()
   }
 
-
+  addProduct = (newProduct) => {
+    axios.post('/api/product', newProduct)
+    .then(res => {
+      this.setState({
+        inventory: res.data
+      })
+      console.log('you added a new product')
+    }).catch(err => console.log('Houston, we have a problem: ', err))
+  }
 
   render() {
     return (

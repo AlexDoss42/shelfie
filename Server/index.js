@@ -16,6 +16,7 @@ massive(CONNECTION_STRING)
 app.use(express.json());
 
 app.get('/api/inventory', Ctrl.getAll)
+app.post('/api/product', Ctrl.addProduct)
 
 
 

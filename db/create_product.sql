@@ -6,4 +6,4 @@ insert into product_skillscheck (
     $1,
     $2,
     $3
-)
+);

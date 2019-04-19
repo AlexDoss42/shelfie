@@ -16,13 +16,17 @@ class App extends Component {
   }
 
   componentDidMount() {
-    axios.get('/api/inventory').then(res => {
+    this.getInventory()
+  }
+  
+  getInventory = () => {
+    axios.get('/api/inventory')
+    .then(res => {
       this.setState({
         inventory: res.data
       })
     }).catch(err => console.log('Houston we have a problem: ', err))
   }
-  
 
   render() {
     return (
@@ -30,7 +34,9 @@ class App extends Component {
           <Header />
           <Dashboard 
           inventory = {this.state.inventory}/>
-          <Form />
+          <Form 
+          inventory = {this.state.inventory}
+          getInventory = {this.getInventory} />
           
 
       </div>
