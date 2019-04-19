@@ -1,6 +1,7 @@
 require('dotenv').config();
 const massive = require('massive');
 const express = require('express');
+const Ctrl = require('./controller')
 
 const app = express();
 
@@ -13,6 +14,10 @@ massive(CONNECTION_STRING)
   .catch(err => console.log(`Houston we have an ${err}`));
 
 app.use(express.json());
+
+app.get('/api/inventory', Ctrl.getAll)
+
+
 
 app.listen(SERVER_PORT, () => {
   console.log(`It's over Anakin! I have the ${SERVER_PORT} port!`)

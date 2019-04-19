@@ -7,12 +7,11 @@ export default class Dashboard extends Component {
   render(){
     return  (
       <div>
-        <h1>Dashboard</h1>
         {this.props.inventory
-        .map(product => {
+        .map((product, i) => {
           return <Product 
-                  product = {product}
-                  />
+                  key = {i}
+                  product = {product}/>
         })}
 
         

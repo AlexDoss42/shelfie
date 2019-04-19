@@ -10,7 +10,7 @@
 
 .productTile {
   display: flex;
-  margin: 10px;
+  margin: 10px 0px;
   padding: 10px;
   width: 350px;
   height: 140px;
@@ -37,7 +37,6 @@
   flex-direction: column;
   justify-content: center;
   width: 350px;
-  margin: 50px;
   padding: 10px;
   border-radius: 10px;
   background: #3ad886;
