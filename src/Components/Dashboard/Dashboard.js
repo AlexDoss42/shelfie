@@ -8,7 +8,14 @@ export default class Dashboard extends Component {
     return  (
       <div>
         <h1>Dashboard</h1>
-        <Product />
+        {this.props.inventory
+        .map(product => {
+          return <Product 
+                  product = {product}
+                  />
+        })}
+
+        
       </div>
 
     )

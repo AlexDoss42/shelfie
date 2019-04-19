@@ -50,11 +50,9 @@ export default class Form extends Component {
     return (
       <div className='addFormContainer'>
 
-        <h1>Form</h1>
-
         <img
           className='imagePreview'
-          src='https://amp.businessinsider.com/images/5b3b978e4a26271d008b4847-750-563.jpg'
+          src='http://www.webbdsc.com/wp-content/uploads/2017/11/noimage_camera.jpg'
           alt='add product preview' />
 
         <form id='addForm'>
